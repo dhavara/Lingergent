@@ -12,7 +12,7 @@ public class MoveCamera : MonoBehaviour
     }
     void FixedUpdate()
     {
-        transform.position = new Vector3(playerSprite.position.x, playerSprite.position.y, playerSprite.position.z + 10);
+        transform.position = new Vector3(playerSprite.position.x, playerSprite.position.y, playerSprite.position.z - 20);
 
     }
 }
