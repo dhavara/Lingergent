@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WalkScript : MonoBehaviour
 {
-    public GameScript gameScript;
     public int health = 3;
     float angle;
     float speed;
+    public GameScript gameScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +41,14 @@ public class WalkScript : MonoBehaviour
         {
             speed = 0f;
         }
+    }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Monster")
+        {
+            this.gameObject.transform.localScale = new Vector3(0, 0, 0);
+            gameScript.GameOver();
+        }
+
     }
 }

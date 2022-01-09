@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameScript : MonoBehaviour
 {
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
+        Player.GetComponent<WalkScript>().gameScript = this;
         
     }
 
@@ -24,5 +26,10 @@ public class GameScript : MonoBehaviour
     public void Escape()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);     
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
     }
 }
