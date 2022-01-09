@@ -8,7 +8,7 @@ public class MoveCamera : MonoBehaviour
     public float cameraDistance = 30.0f;
     void Awake()
     {
-        // GetComponent<UnityEngine.Camera>().orthographicSize = ((Screen.height/2)/cameraDistance);
+        GetComponent<UnityEngine.Camera>().orthographicSize = ((Screen.height/2)/cameraDistance);
     }
     void FixedUpdate()
     {

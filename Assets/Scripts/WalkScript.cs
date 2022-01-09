@@ -35,13 +35,11 @@ public class WalkScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            speed += 0.01f;
-            if (speed > 1) speed = 1;
+            speed = 0.1f;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        else
         {
-            speed -= 0.01f;
-            if (speed < 0) speed = 0;
+            speed = 0f;
         }
     }
 }
